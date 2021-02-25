@@ -1,0 +1,28 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+body {
+  align-items: center;
+  text-align: center;
+  background-image: url('../img/background.png');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
