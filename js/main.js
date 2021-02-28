@@ -18,19 +18,19 @@ function getFetch() {
       document.querySelector('#pokeName').innerText = pokeName;
       document.querySelector('#pokeType').innerText = pokeType;
       // document.querySelector('#pokeName').innerText = pokeName;
-    })
-    .catch((err) => {
-      console.log(`error ${err}`);
-    });
 
-  // second fetch for pokedex entry data
-  fetch(url2)
-    .then((res) => res.json()) // parse response as JSON
-    .then((data) => {
-      const pokeEntry = data.flavor_text_entries[0].flavor_text;
-      console.log(pokeEntry);
-      //pokedex entry output
-      document.querySelector('#pokeEntry').innerText = pokeEntry;
+      // second fetch for pokedex entry data
+      fetch(url2)
+        .then((res) => res.json()) // parse response as JSON
+        .then((data) => {
+          const pokeEntry = data.flavor_text_entries[0].flavor_text;
+          console.log(pokeEntry);
+          //pokedex entry output
+          document.querySelector('#pokeEntry').innerText = pokeEntry;
+        })
+        .catch((err) => {
+          console.log(`error ${err}`);
+        });
     })
     .catch((err) => {
       console.log(`error ${err}`);
