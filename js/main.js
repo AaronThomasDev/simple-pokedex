@@ -11,20 +11,19 @@ function getFetch() {
     .then((data) => {
       const pokeImage = data.sprites.front_default;
       const pokeName = data.name;
-      const pokeType = `${data.types[0].type.name} + ${data.types[1].type.name}`;
+      const pokeType = data.types[0].type.name;
 
       //outputs
       document.querySelector('#pokeImage').src = pokeImage;
       document.querySelector('#pokeName').innerText = pokeName;
       document.querySelector('#pokeType').innerText = pokeType;
-      // document.querySelector('#pokeName').innerText = pokeName;
 
       // second fetch for pokedex entry data
       fetch(url2)
         .then((res) => res.json()) // parse response as JSON
         .then((data) => {
           const pokeEntry = data.flavor_text_entries[0].flavor_text;
-          console.log(pokeEntry);
+          console.log(data);
           //pokedex entry output
           document.querySelector('#pokeEntry').innerText = pokeEntry;
         })
