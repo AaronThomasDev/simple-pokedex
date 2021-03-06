@@ -11,7 +11,9 @@ function getFetch() {
     .then((data) => {
       const pokeImage = data.sprites.front_default;
       const pokeName = data.name;
-      const pokeType = data.types[0].type.name;
+      const pokeType = [];
+
+      data.types.forEach((element) => pokeType.push(element.type.name)); // get types array and push elements to pokeType
 
       //outputs
       document.querySelector('#pokeImage').src = pokeImage;
@@ -23,7 +25,6 @@ function getFetch() {
         .then((res) => res.json()) // parse response as JSON
         .then((data) => {
           const pokeEntry = data.flavor_text_entries[0].flavor_text;
-          console.log(data);
           //pokedex entry output
           document.querySelector('#pokeEntry').innerText = pokeEntry;
         })
