@@ -25,6 +25,7 @@ function getFetch() {
         .then((res) => res.json()) // parse response as JSON
         .then((data) => {
           const pokeEntry = data.flavor_text_entries[0].flavor_text;
+          console.log(pokeEntry);
           //pokedex entry output
           document.querySelector('#pokeEntry').innerText = pokeEntry;
         })
