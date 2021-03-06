@@ -26,6 +26,7 @@ function getFetch() {
         .then((data) => {
           const pokeEntry = data.flavor_text_entries[0].flavor_text;
           console.log(pokeEntry);
+          console.log(data.flavor_text_entries[0]);
           //pokedex entry output
           document.querySelector('#pokeEntry').innerText = pokeEntry;
         })
