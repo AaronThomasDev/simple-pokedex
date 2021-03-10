@@ -1,3 +1,6 @@
+// set up for starting to use object to store the pokemon data key values
+let pokemonData = {};
+
 //Example fetch using pokemonapi.co
 document.querySelector('button').addEventListener('click', getFetch);
 
